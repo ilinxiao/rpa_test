@@ -1,0 +1,392 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Main_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:SelectRandomItem;assembly=SelectRandomItem"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Windows</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Basic" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:Window" Name="Notepad" />
+      <Variable x:TypeArguments="x:String" Default="&lt;wnd app='notepad.exe' cls='Notepad' title='无标题 - 记事本' /&gt;" Name="NotepadSelector" />
+      <Variable x:TypeArguments="x:String" Name="Fonts" />
+      <Variable x:TypeArguments="x:String" Name="FontName" />
+      <Variable x:TypeArguments="x:String" Name="Sizes" />
+      <Variable x:TypeArguments="x:String" Name="FontSize" />
+    </Sequence.Variables>
+    <ui:OpenApplication Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" ApplicationWindow="[Notepad]" DisplayName="打开记事本" FileName="C:\Windows\notepad.exe" sap2010:WorkflowViewState.IdRef="OpenApplication_1" Selector="[NotepadSelector]">
+      <ui:OpenApplication.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+        </ActivityAction>
+      </ui:OpenApplication.Body>
+    </ui:OpenApplication>
+    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="输入信息" EmptyField="False" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="hello,I am linxiao.">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d5085d2662d90d6a55403e1c782dd630" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='无标题 - 记事本' /&gt;&lt;wnd aaname='文本编辑器' cls='Edit' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="点击“格式”菜单" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition OffsetX="134" OffsetY="35" Position="TopLeft" />
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="31f04798752e6526197d7540fcc4266e" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='无标题 - 记事本' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="点击“字体”菜单项" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition OffsetX="48" OffsetY="37" Position="TopLeft" />
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="955518fe7b0b829c535848581aa9db3d" Selector="&lt;wnd app='notepad.exe' cls='#32768' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:GetFullText DisplayName="获取字体列表内所有字体" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
+      <ui:GetFullText.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='字体' /&gt;&#xA;&lt;wnd ctrlid='1136' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:GetFullText.Target>
+      <ui:GetFullText.Text>
+        <OutArgument x:TypeArguments="x:String">[Fonts]</OutArgument>
+      </ui:GetFullText.Text>
+    </ui:GetFullText>
+    <s:SelectRandomItem ChoiceResult="[FontName]" DisplayName="随机选择字体" FullText="[Fonts]" sap2010:WorkflowViewState.IdRef="SelectRandomItem_1" Separator="\r\n" />
+    <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="500" DisplayName="选择字体" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[FontName]">
+      <ui:SelectItem.Items>
+        <scg:List x:TypeArguments="x:String" Capacity="50">
+          <x:String>Agency FB</x:String>
+          <x:String>Algerian</x:String>
+          <x:String>Arial</x:String>
+          <x:String>Arial Rounded MT</x:String>
+          <x:String>Arial Unicode MS</x:String>
+          <x:String>Arvo</x:String>
+          <x:String>Bahnschrift</x:String>
+          <x:String>Baskerville Old Face</x:String>
+          <x:String>Bauhaus 93</x:String>
+          <x:String>Bell MT</x:String>
+          <x:String>Berlin Sans FB</x:String>
+          <x:String>Bernard MT</x:String>
+          <x:String>Blackadder ITC</x:String>
+          <x:String>Bodoni MT</x:String>
+          <x:String>Bodoni MT Poster</x:String>
+          <x:String>Book Antiqua</x:String>
+          <x:String>Bookman Old Style</x:String>
+          <x:String>Bookshelf Symbol 7</x:String>
+          <x:String>Bradley Hand ITC</x:String>
+          <x:String>Britannic</x:String>
+          <x:String>Broadway</x:String>
+          <x:String>Brush Script MT</x:String>
+          <x:String>Calibri</x:String>
+          <x:String>Californian FB</x:String>
+          <x:String>Calisto MT</x:String>
+          <x:String>Cambria</x:String>
+          <x:String>Cambria Math</x:String>
+          <x:String>Candara</x:String>
+          <x:String>Castellar</x:String>
+          <x:String>Centaur</x:String>
+          <x:String>Century</x:String>
+          <x:String>Century Gothic</x:String>
+          <x:String>Century Schoolbook</x:String>
+          <x:String>Chiller</x:String>
+          <x:String>Code 128</x:String>
+          <x:String>Code EAN13</x:String>
+          <x:String>Colonna MT</x:String>
+          <x:String>Comic Sans MS</x:String>
+          <x:String>Consolas</x:String>
+          <x:String>Constantia</x:String>
+          <x:String>Cooper</x:String>
+          <x:String>Copperplate Gothic</x:String>
+          <x:String>Corbel</x:String>
+          <x:String>Courier</x:String>
+          <x:String>Courier New</x:String>
+          <x:String>Curlz MT</x:String>
+          <x:String>Droid Serif</x:String>
+          <x:String>Dubai</x:String>
+          <x:String>Edwardian Script ITC</x:String>
+          <x:String>Elephant</x:String>
+        </scg:List>
+      </ui:SelectItem.Items>
+      <ui:SelectItem.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="993b010e8650a3b5f7ba38cbc2e89bf5" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='字体' /&gt;&lt;wnd ctrlid='1136' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SelectItem.Target>
+    </ui:SelectItem>
+    <ui:SelectItem DelayAfter="{x:Null}" DelayBefore="{x:Null}" ContinueOnError="True" DisplayName="选择字形" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="粗体">
+      <ui:SelectItem.Items>
+        <scg:List x:TypeArguments="x:String" Capacity="4">
+          <x:String>常规</x:String>
+          <x:String>倾斜</x:String>
+          <x:String>粗体</x:String>
+          <x:String>粗偏斜体</x:String>
+        </scg:List>
+      </ui:SelectItem.Items>
+      <ui:SelectItem.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8557f2ecb004dee5c448c6714eef4763" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='字体' /&gt;&lt;wnd ctrlid='1137' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SelectItem.Target>
+    </ui:SelectItem>
+    <ui:GetFullText DisplayName="获取所有字体大小可选项" sap2010:WorkflowViewState.IdRef="GetFullText_2" IgnoreHidden="False">
+      <ui:GetFullText.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='字体' /&gt;&#xD;&#xA;&lt;wnd ctrlid='1138' /&gt;&#xD;&#xA;" WaitForReady="INTERACTIVE" />
+      </ui:GetFullText.Target>
+      <ui:GetFullText.Text>
+        <OutArgument x:TypeArguments="x:String">[Sizes]</OutArgument>
+      </ui:GetFullText.Text>
+    </ui:GetFullText>
+    <s:SelectRandomItem ChoiceResult="[FontSize]" DisplayName="随机选择字体大小" FullText="[Sizes]" sap2010:WorkflowViewState.IdRef="SelectRandomItem_2" Separator="\r\n" />
+    <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="选择字体大小" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="[FontSize]">
+      <ui:SelectItem.Items>
+        <scg:List x:TypeArguments="x:String" Capacity="32">
+          <x:String>8</x:String>
+          <x:String>9</x:String>
+          <x:String>10</x:String>
+          <x:String>11</x:String>
+          <x:String>12</x:String>
+          <x:String>14</x:String>
+          <x:String>16</x:String>
+          <x:String>18</x:String>
+          <x:String>20</x:String>
+          <x:String>22</x:String>
+          <x:String>24</x:String>
+          <x:String>26</x:String>
+          <x:String>28</x:String>
+          <x:String>36</x:String>
+          <x:String>48</x:String>
+          <x:String>72</x:String>
+          <x:String>初号</x:String>
+          <x:String>小初</x:String>
+          <x:String>一号</x:String>
+          <x:String>小一</x:String>
+          <x:String>二号</x:String>
+          <x:String>小二</x:String>
+          <x:String>三号</x:String>
+          <x:String>小三</x:String>
+          <x:String>四号</x:String>
+          <x:String>小四</x:String>
+          <x:String>五号</x:String>
+          <x:String>小五</x:String>
+          <x:String>六号</x:String>
+          <x:String>小六</x:String>
+          <x:String>七号</x:String>
+          <x:String>八号</x:String>
+        </scg:List>
+      </ui:SelectItem.Items>
+      <ui:SelectItem.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="cf69605942d090b91f00526816c72ddc" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='字体' /&gt;&lt;wnd ctrlid='1138' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SelectItem.Target>
+    </ui:SelectItem>
+    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="点击“确定”按钮保存字体" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition OffsetX="41" OffsetY="8" Position="TopLeft" />
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ea574df9d3a1e2cd578a1c2e83845c2e" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='字体' /&gt;&lt;wnd ctrlid='1' title='确定' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:Click.Target>
+    </ui:Click>
+    <Sequence DisplayName="Basic" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="linxiao.txt" Name="TxtFIleName" />
+        <Variable x:TypeArguments="x:String" Default="[&quot;&lt;wnd app='notepad.exe' cls='Notepad' title='&quot; + TxtFIleName +&quot; - 记事本' /&gt;&quot;]" Name="SavedSelectorNotepad" />
+        <Variable x:TypeArguments="x:Boolean" Name="FileExists" />
+      </Sequence.Variables>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="点击“文件”菜单" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="33" OffsetY="43" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="042ab2375522571954d9b116f61a59af" Selector="[NotepadSelector]" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="点击“保存”菜单项" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="63" OffsetY="53" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="26dce4358953c7ee34bbee32736111b8" Selector="&lt;wnd app='notepad.exe' cls='#32768' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="输入文件名" EmptyField="True" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[TxtFIleName]">
+        <ui:TypeInto.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="247bade9aebd5aa93b8194ee69ec281b" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='另存为' /&gt;&lt;wnd aaname='文件名:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:TypeInto.Target>
+      </ui:TypeInto>
+      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="选择存储位置" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="桌面 (已固定)">
+        <ui:SelectItem.Items>
+          <scg:List x:TypeArguments="x:String" Capacity="32">
+            <x:String>快速访问</x:String>
+            <x:String>桌面 (已固定)</x:String>
+            <x:String>下载 (已固定)</x:String>
+            <x:String>linxiao (已固定)</x:String>
+            <x:String>文档 (已固定)</x:String>
+            <x:String>图片 (已固定)</x:String>
+            <x:String>lv (已固定)</x:String>
+            <x:String>网络 (已固定)</x:String>
+            <x:String>ctest (已固定)</x:String>
+            <x:String>voice (已固定)</x:String>
+            <x:String>yanxuan_zuidijia (已固定)</x:String>
+            <x:String>桌面</x:String>
+            <x:String>此电脑</x:String>
+            <x:String>3D 对象</x:String>
+            <x:String>视频</x:String>
+            <x:String>图片</x:String>
+            <x:String>文档</x:String>
+            <x:String>下载</x:String>
+            <x:String>音乐</x:String>
+            <x:String>桌面</x:String>
+            <x:String>OS (C:)</x:String>
+            <x:String>DATA (D:)</x:String>
+            <x:String>网络</x:String>
+            <x:String>家庭组</x:String>
+          </scg:List>
+        </ui:SelectItem.Items>
+        <ui:SelectItem.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="60973d11fe3202e4aee638df73958dcb" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='另存为' /&gt;&lt;wnd cls='NamespaceTreeControl' title='命名空间树状控制项' /&gt;&lt;wnd ctrlid='100' title='树视图' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:SelectItem.Target>
+      </ui:SelectItem>
+      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="确定保存" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+        <ui:Click.CursorPosition>
+          <ui:CursorPosition OffsetX="38" OffsetY="14" Position="TopLeft" />
+        </ui:Click.CursorPosition>
+        <ui:Click.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c45c1cd3b97cff496b2e4b77f53e9792" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='另存为' /&gt;&lt;wnd ctrlid='1' title='保存(&amp;amp;S)' /&gt;" WaitForReady="INTERACTIVE" />
+        </ui:Click.Target>
+      </ui:Click>
+      <ui:UiElementExists DisplayName="检查是否弹出&quot;文件已存在提示框&quot;" Exists="[FileExists]" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+        <ui:UiElementExists.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='确认另存为' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+        </ui:UiElementExists.Target>
+      </ui:UiElementExists>
+      <If Condition="[FileExists]" DisplayName="文件存在则覆盖" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="" ClickType="CLICK_SINGLE" DisplayName="覆盖原文件" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition OffsetX="29" OffsetY="7" Position="TopLeft" />
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ee0e90441d4d75f2cf1013e935faec0c" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='确认另存为' /&gt;&lt;wnd aaname='是(Y)' cls='Button' title='是(&amp;amp;Y)' /&gt;" WaitForReady="INTERACTIVE" />
+            </ui:Click.Target>
+          </ui:Click>
+        </If.Then>
+        <If.Else>
+          <WriteLine DisplayName="Write Line" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;文件&quot; + TxtFIleName + &quot;已保存。&quot;]" />
+        </If.Else>
+      </If>
+      <ui:CloseApplication DisplayName="退出记事本" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+        <ui:CloseApplication.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="[SavedSelectorNotePad]" WaitForReady="INTERACTIVE" />
+        </ui:CloseApplication.Target>
+      </ui:CloseApplication>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>dy9DOlxVc2Vyc1xsdlxjdGVzdFx1aXBhdGhcUmVjb3JkX0Jhc2ljXE1haW4ueGFtbFFAA9ECDgIBAUM0Q3UCAQJJBVEaAgFdUgVWEwIBWlcFXhACAVZfBWYQAgFSZwVuFgIBTm8Fb6MBAgFIcAWqARUCAUOrAQW3ARUCAT+4AQW/ARYCATvAAQXAAaUBAgE1wQEF6QEVAgEx6gEF8QEQAgEt8gEFzwIQAgEDSfABSYMCAgFhSXFJfAIBX0maAUmyAQIBXlSYAVSAAgIBXFKKAlKfAgIBW1yYAVzZAQIBWVkyWTYCAVhZJFkpAgFXZJgBZMYBAgFVYTFhNQIBVGEkYSgCAVNpX2m4AQIBUWwxbDgCAU9vUW9aAgFMbyZvMgIBSm+aAW+gAQIBSXBRcFYCAUZwngFwqgECAUSoAZgBqAHsAQIBR6sBUasBVwIBQasBnwGrAaMBAgFAtQGYAbUB7AECAUK6AV+6AccBAgE+vQExvQE4AgE8wAFTwAFcAgE5wAEmwAEyAgE3wAGcAcABogECATbBAaUBwQGxAQIBMucBmAHnAewBAgE07wGYAe8B9AECATDsATHsATQCAS/sASTsASgCAS70ATb0AUMCAQb1ATb1AZ4BAgEE+AEH/wESAgEogAIHhwISAgEkiAIHjAIVAgEgjQIHrQIXAgEdrgIHtQISAgEZtgIHugIcAgEUuwIHyQIMAgEKygIHzgIdAgEH/QGaAf0BrQECASv6ATP6ATcCASr6ASb6ASoCASmFApoBhQLIAQIBJ4ICM4ICNwIBJoICJoICKgIBJYoCmgGKApkCAgEjiAKMAogCmwICASGNAqcBjQKxAQIBHqsCmgGrArQCAgEfswKaAbMCgwICARywAjOwAjcCARuwAiawAioCARq4Aky4AogBAgEYuAKTAbgCmQECARe2Aku2AlkCARW7AhW7AiMCAQu9AgvEAhYCARDHAgvHApgBAgENzAJhzAJ5AgEIwgKeAcICmAICARO/Aje/AjoCARK/Aiq/Ai4CARHHAmLHApUBAgEO</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="OpenApplication_1" sap:VirtualizedContainerService.HintSize="574,125" />
+      <sap2010:ViewStateData Id="TypeInto_1" sap:VirtualizedContainerService.HintSize="574,134" />
+      <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="574,106" />
+      <sap2010:ViewStateData Id="Click_3" sap:VirtualizedContainerService.HintSize="574,106" />
+      <sap2010:ViewStateData Id="GetFullText_1" sap:VirtualizedContainerService.HintSize="574,68" />
+      <sap2010:ViewStateData Id="SelectRandomItem_1" sap:VirtualizedContainerService.HintSize="574,22" />
+      <sap2010:ViewStateData Id="SelectItem_1" sap:VirtualizedContainerService.HintSize="574,134" />
+      <sap2010:ViewStateData Id="SelectItem_2" sap:VirtualizedContainerService.HintSize="574,134" />
+      <sap2010:ViewStateData Id="GetFullText_2" sap:VirtualizedContainerService.HintSize="574,68" />
+      <sap2010:ViewStateData Id="SelectRandomItem_2" sap:VirtualizedContainerService.HintSize="574,22" />
+      <sap2010:ViewStateData Id="SelectItem_3" sap:VirtualizedContainerService.HintSize="574,134" />
+      <sap2010:ViewStateData Id="Click_4" sap:VirtualizedContainerService.HintSize="574,106" />
+      <sap2010:ViewStateData Id="Click_5" sap:VirtualizedContainerService.HintSize="552,106" />
+      <sap2010:ViewStateData Id="Click_6" sap:VirtualizedContainerService.HintSize="552,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TypeInto_3" sap:VirtualizedContainerService.HintSize="552,134" />
+      <sap2010:ViewStateData Id="SelectItem_4" sap:VirtualizedContainerService.HintSize="552,134" />
+      <sap2010:ViewStateData Id="Click_7" sap:VirtualizedContainerService.HintSize="552,106" />
+      <sap2010:ViewStateData Id="UiElementExists_1" sap:VirtualizedContainerService.HintSize="552,68" />
+      <sap2010:ViewStateData Id="Click_14" sap:VirtualizedContainerService.HintSize="314,106">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WriteLine_2" sap:VirtualizedContainerService.HintSize="213,63" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="552,259" />
+      <sap2010:ViewStateData Id="CloseApplication_1" sap:VirtualizedContainerService.HintSize="552,68" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="574,1385">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="596,3148">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="636,3228" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
